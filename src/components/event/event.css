@@ -1,0 +1,11 @@
+.events__list {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.registration {
+    border-radius: 5px;
+    background-color: bisque;
+    margin: 1rem;
+    padding: 1rem;
+}
