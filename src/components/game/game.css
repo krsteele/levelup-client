@@ -1,0 +1,11 @@
+.games__list {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.game {
+    border-radius: 5px;
+    background-color: paleturquoise;
+    margin: 1rem;
+    padding: 1rem;
+}
