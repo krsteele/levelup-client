@@ -94,7 +94,7 @@ export const GameForm = () => {
                     const game = {
                         title: currentGame.title,
                         numberOfPlayers: parseInt(currentGame.numberOfPlayers),
-                        description: currentGame.description,
+                        description: (currentGame.description),
                         gameTypeId: parseInt(currentGame.gameTypeId)
                     }
 
