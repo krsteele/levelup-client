@@ -48,10 +48,13 @@ export const EventList = (props) => {
                                     new Date(event.event_time).toLocaleTimeString("en-US")
                                 }
                             </div>
+                            <button className="btn btn-2"
+                                    onClick={() => joinEvent(event.id)}
+                            >Join</button>
                         </section>
                     })
                 }
             </div>
         </article >
-    )``
+    )
 }
