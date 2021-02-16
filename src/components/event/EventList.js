@@ -6,7 +6,7 @@ import "./event.css"
 export const EventList = (props) => {
     const history = useHistory()
 
-    const { events, getEvents } = useContext(EventContext)
+    const { events, getEvents, joinEvent } = useContext(EventContext)
 
 
 
@@ -22,7 +22,7 @@ export const EventList = (props) => {
                     onClick={() => {
                         history.push({ pathname: "/events/new" })
                             }}
-                        >Register New Event
+                        >Schedule New Event
                 </button>
             </header>
             <div className="events__list">
@@ -48,6 +48,9 @@ export const EventList = (props) => {
                                     new Date(event.event_time).toLocaleTimeString("en-US")
                                 }
                             </div>
+                            <button className="btn btn-2"
+                                    onClick={() => joinEvent(event.id)}
+                            >Join</button>
                         </section>
                     })
                 }
