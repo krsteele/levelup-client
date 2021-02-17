@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from "react"
 import { ProfileContext } from "./ProfileProvider.js"
-import "./Profile.css"
 
 
 export const Profile = () => {
