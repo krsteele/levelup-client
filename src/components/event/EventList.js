@@ -6,7 +6,7 @@ import "./event.css"
 export const EventList = (props) => {
     const history = useHistory()
 
-    const { events, getEvents, joinEvent } = useContext(EventContext)
+    const { events, getEvents, joinEvent, leaveEvent } = useContext(EventContext)
 
 
 
@@ -48,9 +48,11 @@ export const EventList = (props) => {
                                     new Date(event.event_time).toLocaleTimeString("en-US")
                                 }
                             </div>
-                            <button className="btn btn-2"
-                                    onClick={() => joinEvent(event.id)}
-                            >Join</button>
+                            {
+                                event.joined
+                                    ? <button className="btn btn-3" onClick={() => leaveEvent(event.id)} >Leave</button>
+                                    : <button className="btn btn-2" onClick={() => joinEvent(event.id)} >Join</button>
+                            }
                         </section>
                     })
                 }
