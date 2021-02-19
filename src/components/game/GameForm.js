@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 
 export const GameForm = (props) => {
     const history = useHistory()
-    const { createGame, getGameTypes, gameTypes, getGame } = useContext(GameContext)
+    const { createGame, getGameTypes, gameTypes, getGame, editGame } = useContext(GameContext)
 
     /*
         Since the input fields are bound to the values of
@@ -105,6 +105,7 @@ export const GameForm = (props) => {
                             evt.preventDefault()
         
                             const game = {
+                                id: parseInt(props.match.params.gameId),
                                 title: currentGame.title,
                                 numberOfPlayers: parseInt(currentGame.numberOfPlayers),
                                 description: (currentGame.description),
@@ -115,7 +116,7 @@ export const GameForm = (props) => {
                             editGame(game)
                                 .then(() => history.push("/"))
                         }}
-                        className="btn btn-primary">Create</button>
+                        className="btn btn-primary">Edit</button>
                     : <button type="submit"
                         onClick={evt => {
                             // Prevent form from being submitted
