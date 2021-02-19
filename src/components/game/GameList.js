@@ -26,6 +26,9 @@ export const GameList = (props) => {
                 {
                     games.map(game => {
                         return <section key={`game--${game.id}`} className="game">
+                            <div className="game__edit">
+                                <button className="btn btn-2" onClick={() => history.push(`/games/${game.id}/edit`)} >Edit</button>
+                            </div>
                             <div className="game__title">{game.title}</div>
                             <div className="game__description">{game.description}</div>
                             <div className="game__players">{game.number_of_players} players needed</div>
